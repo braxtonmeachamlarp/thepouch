@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Pouch: Every number from the Pelicans’ 2026–27 season</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F4; --surface:#FFFFFF; --ink:#0C2340; --ink-2:#3A4A63; --muted:#6B7890;
+  --rule:#C9D1DD; --win:#0C2340; --loss:#C8102E; --gold:#85714D; --gold-soft:#E6DCC8; --bar-bg:#DCE2EA;
+  --display:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;
+  --body:"Literata",Georgia,"Times New Roman",serif;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0A1B31; --surface:#10243F; --ink:#EEF1F6; --ink-2:#C2CBD9; --muted:#8C99B0;
+    --rule:#2A3F5E; --win:#D9C59A; --loss:#FF5A6E; --gold:#C8B58B; --gold-soft:#2A3A55; --bar-bg:#1C3252;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0A1B31; --surface:#10243F; --ink:#EEF1F6; --ink-2:#C2CBD9; --muted:#8C99B0;
+  --rule:#2A3F5E; --win:#D9C59A; --loss:#FF5A6E; --gold:#C8B58B; --gold-soft:#2A3A55; --bar-bg:#1C3252;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+.prose{max-width:40rem}
+p{margin:0 0 1rem}
+
+/* top bar */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+.topbar .wrap{display:flex;align-items:center;gap:1.5rem;min-height:56px;overflow-x:auto;scrollbar-width:none}
+.topbar .wrap::-webkit-scrollbar{display:none}
+.brand{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:1.15rem;white-space:nowrap;text-decoration:none}
+.brand span{color:var(--muted);font-weight:500}
+nav{display:flex;gap:.25rem}
+nav a{font-family:var(--display);font-weight:600;font-size:.95rem;text-decoration:none;padding:.45rem .7rem;border-radius:4px;white-space:nowrap;color:var(--ink-2)}
+nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.recchip{margin-left:auto;font-family:var(--display);font-size:.9rem;white-space:nowrap;color:var(--muted)}
+.recchip b{color:var(--ink);font-weight:800}
+
+/* status strip */
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border-bottom:1px solid var(--rule)}
+.strip > div{padding:1rem 1.25rem;border-right:1px solid var(--rule);font-family:var(--display)}
+.strip > div:last-child{border-right:0}
+.strip .k{font-size:.82rem;color:var(--muted)}
+.strip .v{font-size:1.5rem;font-weight:800;line-height:1.15}
+.strip .s{font-size:.82rem;color:var(--ink-2)}
+
+/* views */
+.view{display:none}
+.view.on{display:block}
+section{padding:3rem 0;border-top:1px solid var(--rule)}
+section:first-child{border-top:0}
+h1{font-family:var(--display);font-stretch:75%;font-weight:800;font-size:clamp(4rem,14vw,10rem);line-height:.86;letter-spacing:-.02em;margin:0}
+.headline{display:flex;align-items:flex-end;gap:1.5rem 3rem;flex-wrap:wrap}
+.headline h1{font-size:clamp(6rem,20vw,12.5rem);line-height:.8}
+.path{list-style:none;margin:0;padding:0 0 .5rem 1.5rem;border-left:2px solid var(--rule);display:grid;gap:.9rem;max-width:26rem}
+.path li{display:grid;grid-template-columns:3.4rem 1fr;gap:.75rem;align-items:baseline}
+.path b{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:1.6rem;line-height:1}
+.path b.l{color:var(--loss)}
+.path span{font-size:.98rem;line-height:1.4;color:var(--ink-2)}
+@media (max-width:560px){.path{border-left:0;padding-left:0;border-top:2px solid var(--rule);padding-top:1rem}}
+h2{font-family:var(--display);font-weight:700;font-stretch:85%;font-size:clamp(1.8rem,4.2vw,2.6rem);line-height:1.05;margin:0 0 1rem;letter-spacing:-.01em}
+h3{font-family:var(--display);font-weight:700;font-size:1.2rem;margin:0 0 .35rem;line-height:1.25}
+.kicker{font-family:var(--display);font-weight:500;color:var(--muted);margin:0 0 .75rem}
+.dek{font-size:1.15rem;color:var(--ink-2);max-width:38rem;margin:1.25rem 0 0}
+.note{font-size:.88rem;color:var(--muted)}
+.hero{padding:3rem 0 2rem}
+
+/* charts */
+svg text{font-family:var(--display)}
+.chart{width:100%;height:auto;display:block;overflow:visible}
+.legend{display:flex;gap:1.25rem;flex-wrap:wrap;font-family:var(--display);font-size:.88rem;color:var(--ink-2);margin:.5rem 0 0}
+.legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:2px;margin-right:.35rem;vertical-align:-1px}
+
+/* insight grid */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem 3rem}
+.insight .num{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:3rem;line-height:1}
+.insight .num.neg{color:var(--loss)}
+.insight p{font-size:.97rem;color:var(--ink-2);margin-top:.5rem}
+
+/* recap */
+.recap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:2.5rem}
+.score{font-family:var(--display);display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin:.25rem 0 1rem}
+.score b{font-size:2.6rem;font-weight:800;font-stretch:80%;line-height:1}
+.score .lose{color:var(--loss);font-weight:700}
+@media (max-width:760px){.recap{grid-template-columns:1fr}}
+
+/* tables */
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-family:var(--display);font-size:.93rem;font-variant-numeric:tabular-nums}
+th{font-weight:500;color:var(--muted);text-align:left;padding:.5rem .6rem;border-bottom:2px solid var(--ink);white-space:nowrap}
+td{padding:.6rem .6rem;border-bottom:1px solid var(--rule);vertical-align:top;white-space:nowrap}
+.n{text-align:right}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{color:var(--ink)}
+th[aria-sort] {color:var(--ink)}
+th[aria-sort="descending"]::after{content:" ↓"}
+th[aria-sort="ascending"]::after{content:" ↑"}
+.res{font-weight:800}.res.w{color:var(--win)}.res.l{color:var(--loss)}
+tr.click{cursor:pointer}
+tr.click:hover td{background:var(--surface)}
+tr.sel td{background:var(--gold-soft)}
+tr.detail td{background:var(--surface);white-space:normal;padding:1.25rem}
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.4rem 2.5rem}
+.cmp-row{display:grid;grid-template-columns:3.2rem 1fr 3.2rem;gap:.5rem;align-items:center;font-size:.85rem}
+.cmp-row .lab{grid-column:1/-1;color:var(--muted);font-size:.78rem;margin-top:.35rem}
+.cmp-row .a{text-align:right;font-weight:700}
+.cmp-row .b{font-weight:500;color:var(--ink-2)}
+.twin{display:flex;height:8px;gap:2px}
+.twin span{display:block;height:100%}
+.twin .x{background:var(--win)} .twin .y{background:var(--rule)}
+.performers{margin-top:1rem;font-size:.92rem;color:var(--ink-2);font-family:var(--body)}
+.pill{font-size:.75rem;font-weight:600;padding:.05rem .45rem;border-radius:3px;border:1px solid currentColor;margin-left:.4rem;white-space:nowrap}
+
+/* bars */
+.hbars{display:grid;gap:.9rem}
+.hbar{display:grid;grid-template-columns:minmax(8rem,12rem) 1fr;gap:1rem;align-items:center;font-family:var(--display)}
+.hbar .l{font-weight:600;font-size:.95rem;line-height:1.2}
+.hbar .l small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
+.pair{display:grid;gap:3px}
+.pair div{display:flex;align-items:center;gap:.5rem;font-size:.82rem}
+.pair .b{height:14px;border-radius:2px}
+.pair .us .b{background:var(--win)} .pair .them .b{background:var(--loss);opacity:.75}
+@media (max-width:560px){.hbar{grid-template-columns:1fr;gap:.35rem}}
+
+/* rank dots */
+.ranks{display:grid;gap:1.2rem;max-width:44rem}
+.rank-row{display:grid;grid-template-columns:minmax(9rem,13rem) 1fr;gap:1rem;align-items:center}
+.rank-row .what{font-family:var(--display);font-weight:600;line-height:1.25}
+.rank-row .what span{display:block;font-weight:400;color:var(--muted);font-size:.86rem}
+.track{position:relative;height:2.1rem;border-left:2px solid var(--ink);border-right:1px dashed var(--rule)}
+.track::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--rule)}
+.dot{position:absolute;top:50%;width:2.1rem;height:2.1rem;margin-left:-1.05rem;transform:translateY(-50%);border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:.9rem;color:var(--paper)}
+.dot.good{background:var(--win)}.dot.bad{background:var(--loss)}
+@media (max-width:560px){.rank-row{grid-template-columns:1fr}}
+
+/* stacked shot bar */
+.stack{display:flex;height:2.6rem;border-radius:3px;overflow:hidden;font-family:var(--display);font-size:.8rem;font-weight:600}
+.stack span{display:flex;align-items:center;justify-content:center;color:var(--paper);overflow:hidden;white-space:nowrap}
+.s1{background:var(--win)}.s2{background:var(--ink-2)}.s3{background:var(--muted)}.s4{background:var(--gold)}
+
+/* player picker */
+.picker{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.25rem}
+.picker button{font-family:var(--display);font-weight:600;font-size:.9rem;padding:.45rem .8rem;border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer}
+.picker button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pcard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:2.5rem}
+@media (max-width:820px){.pcard{grid-template-columns:1fr}}
+.statline{display:flex;flex-wrap:wrap;gap:1.25rem 1.75rem;font-family:var(--display);margin:.75rem 0 1rem}
+.statline b{display:block;font-size:1.9rem;font-weight:800;line-height:1.05}
+.statline i{font-style:normal;font-size:.8rem;color:var(--muted)}
+.tag{display:inline-block;font-family:var(--display);font-size:.78rem;padding:.1rem .5rem;border-radius:3px;background:var(--gold-soft);color:var(--ink);margin-left:.4rem;vertical-align:middle;font-weight:500}
+
+footer{padding:2.5rem 0 4rem;border-top:1px solid var(--rule);font-size:.88rem;color:var(--muted)}
+.foot-brand{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap;margin-bottom:1.75rem}
+.foot-brand b{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:1.6rem;color:var(--ink);line-height:1}
+.foot-brand span{font-size:.95rem;color:var(--ink-2)}
+footer.wrap{padding-top:2.5rem;padding-bottom:4rem;margin-top:1rem}
+.foot-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem 2.5rem;margin:0}
+.foot-meta dt{font-family:var(--display);font-weight:600;font-size:.85rem;color:var(--ink);margin-bottom:.25rem}
+.foot-meta dd{margin:0;font-size:.85rem;line-height:1.5;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){
+  .grow{transform-box:fill-box;transform-origin:bottom;animation:grow .6s cubic-bezier(.2,.7,.2,1) both}
+  .grow.down{transform-origin:top}
+  @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#overview">The Pouch <span>Pelicans 2026–27</span></a>
+    <nav aria-label="Sections">
+      <a href="#overview">Overview</a>
+      <a href="#games">Games</a>
+      <a href="#team">Team stats</a>
+      <a href="#players">Players</a>
+      <a href="#schedule">Schedule</a>
+    </nav>
+    <div class="recchip"><b>4–5</b> · 11th West</div>
+  </div>
+</header>
+
+<main>
+<!-- ===================== OVERVIEW ===================== -->
+<div class="view" id="v-overview">
+  <div class="wrap">
+    <section class="hero">
+      <p class="kicker">New Orleans Pelicans, nine games into the Jamahl Mosley era</p>
+      <div class="headline">
+        <h1 aria-label="Record: 4 wins, 5 losses">4–5</h1>
+        <ol class="path" aria-label="How the season got here">
+          <li><b>0–4</b><span>Opened with three close losses and a blowout</span></li>
+          <li><b>4–0</b><span>Won four straight, two of them by double digits</span></li>
+          <li><b class="l">L</b><span>Lost 115–109 to Minnesota after losing the fourth quarter 38–30</span></li>
+        </ol>
+      </div>
+      <div style="margin-top:2rem"><svg class="chart" id="ribbon" role="img" aria-label="Final margin in each game"></svg></div>
+      <p class="note" style="margin-top:.5rem">Final margin in each game. Overtime games are marked OT.</p>
+    </section>
+  </div>
+  <div class="strip wrap" style="padding:0">
+    <div><div class="k">Record</div><div class="v">4–5</div><div class="s">11th West, 1 game out of play-in</div></div>
+    <div><div class="k">Net rating</div><div class="v" id="s-net"></div><div class="s">points per 100 possessions</div></div>
+    <div><div class="k">Pace</div><div class="v" id="s-pace"></div><div class="s">possessions per game</div></div>
+    <div><div class="k">In close games</div><div class="v">1–4</div><div class="s">decided by 6 or fewer</div></div>
+    <div><div class="k">Win pace</div><div class="v">36</div><div class="s">vs. 27.5 preseason total</div></div>
+  </div>
+  <div class="wrap">
+    <section>
+      <div class="recap">
+        <div>
+          <p class="kicker">Last game · Friday, Nov. 6 · Smoothie King Center</p>
+          <div class="score"><b>MIN 115</b><b>NOP 109</b><span class="lose">Loss</span></div>
+          <p>New Orleans led 79–77 after three quarters and lost the fourth 38–30. Jeremiah Fears had his best scoring night of the season, 24 points on 9-of-16 shooting, and Trey Murphy III returned from his knee issue with 10 points and 5 assists. Zion Williamson was held to 13 on 10 shots.</p>
+          <p>The Pelicans did a lot right: 10 of 24 from three, 30 fast-break points, only 13 turnovers. What sank them was the glass and the rim. Minnesota grabbed 17 offensive rebounds for 20 second-chance points, shot 23 of 32 at the rim, and got 11 more free-throw attempts. Herb Jones fouled out.</p>
+        </div>
+        <div>
+          <h3>Box score comparison</h3>
+          <div id="recapCmp" class="cmp" style="grid-template-columns:1fr"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What the numbers say</h2>
+      <p class="prose">Four patterns from the first nine games. Everything here is computed from the full team box scores.</p>
+      <div class="grid2" style="margin-top:1.5rem">
+        <div class="insight">
+          <div class="num">+39 / <span style="color:var(--loss)">−27</span></div>
+          <h3>Third quarters win games, fourth quarters lose them</h3>
+          <p>In the six regulation games, New Orleans outscored opponents by 39 in third quarters and got outscored by 27 in fourth quarters. Add 1–4 in games decided by six points or fewer, and late-game execution is the clearest gap between 4–5 and 6–3.</p>
+        </div>
+        <div class="insight">
+          <div class="num neg">−84</div>
+          <h3>Points lost at the three-point line</h3>
+          <p>Opponents have made 28 more threes, worth 84 points. The Pelicans win the paint by 72 and the free-throw line by 33, which almost exactly cancels it. That’s why their point differential is just +13 despite a top-tier offense.</p>
+        </div>
+        <div class="insight">
+          <div class="num" id="i-rim"></div>
+          <h3>Opponents’ shooting at the rim</h3>
+          <p>The defense forces turnovers (11.8 steals a game) but almost never stops a shot near the basket. Opponents convert better than 7 of every 10 attempts at the rim, and New Orleans has no rim protector in the rotation with Yves Missi out.</p>
+        </div>
+        <div class="insight">
+          <div class="num">+15.3</div>
+          <h3>Bench scoring margin per game</h3>
+          <p>The second unit averages 46.1 points to opponents’ 30.8. Saddiq Bey, Trendon Watford and Jordan Poole have made depth a real strength, which is part of why the regular-season ceiling looks higher than the preseason projections.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Where they rank</h2>
+      <p class="prose note">League ranks among 30 teams through eight games (as of Nov. 6). Left is best.</p>
+      <div class="ranks" style="margin-top:1.25rem" id="ranks"></div>
+    </section>
+  </div>
+</div>
+
+<!-- ===================== GAMES ===================== -->
+<div class="view" id="v-games">
+  <div class="wrap">
+    <section>
+      <h2>Game log</h2>
+      <p class="prose">Tap any game for the full team comparison and top Pelicans performers.</p>
+      <div class="scroll"><table id="gamelog"></table></div>
+    </section>
+    <section>
+      <h2>Efficiency, game by game</h2>
+      <p class="prose">Points scored and allowed per 100 possessions. When the gold line sits above the red one, the Pelicans were the better team that night.</p>
+      <svg class="chart" id="effChart" role="img" aria-label="Offensive and defensive rating by game"></svg>
+      <div class="legend"><span><i style="background:var(--gold)"></i>Offense (points per 100)</span><span><i style="background:var(--loss)"></i>Defense (points allowed per 100)</span></div>
+    </section>
+    <section>
+      <h2>Threes made vs. allowed</h2>
+      <p class="prose">The Pelicans have out-made their opponent from three once in nine games, in the opener, and lost that one anyway.</p>
+      <svg class="chart" id="threeChart" role="img" aria-label="Threes made by Pelicans and opponents per game"></svg>
+      <div class="legend"><span><i style="background:var(--win)"></i>Pelicans</span><span><i style="background:var(--loss);opacity:.75"></i>Opponent</span></div>
+    </section>
+  </div>
+</div>
+
+<!-- ===================== TEAM ===================== -->
+<div class="view" id="v-team">
+  <div class="wrap">
+    <section>
+      <h2>Season averages</h2>
+      <p class="prose">Per-game totals for the Pelicans and their opponents across all nine games.</p>
+      <div class="scroll"><table id="teamTable"></table></div>
+    </section>
+    <section>
+      <h2>The four factors</h2>
+      <p class="prose">The four stats that explain most of the difference between winning and losing: shooting efficiency, turnovers, offensive rebounding and getting to the line. New Orleans wins two, loses two, and every one is close.</p>
+      <div class="hbars" id="factors" style="max-width:52rem;margin-top:1.25rem"></div>
+    </section>
+    <section>
+      <h2>Where the points come from</h2>
+      <p class="prose">Per-game points by source. Paint scoring, fast breaks and bench production are real edges.</p>
+      <div class="hbars" id="sources" style="max-width:52rem;margin-top:1.25rem"></div>
+    </section>
+    <section>
+      <h2>Shot profile</h2>
+      <p class="prose">How the Pelicans’ shot attempts break down by zone, and how they convert. Short shots are attempts in the paint that aren’t at the rim.</p>
+      <div id="shotProfile" style="max-width:52rem;margin-top:1.25rem"></div>
+    </section>
+    <section>
+      <h2>Quarter by quarter</h2>
+      <p class="prose">Combined scoring in the six games that ended in regulation. Overtime games are left out because their quarter splits were incomplete in the data.</p>
+      <div class="scroll" style="max-width:44rem"><table id="quarters"></table></div>
+    </section>
+    <section>
+      <h2>Splits</h2>
+      <div class="scroll" style="max-width:44rem"><table id="splits"></table></div>
+      <p class="note" style="margin-top:.75rem">Small samples. Murray’s on/off split mostly reflects schedule: the three games he missed included Sacramento and Atlanta at home.</p>
+    </section>
+  </div>
+</div>
+
+<!-- ===================== PLAYERS ===================== -->
+<div class="view" id="v-players">
+  <div class="wrap">
+    <section>
+      <h2>Player stats</h2>
+      <p class="prose">Season averages for the core rotation. Tap a column to sort, or a name to see that player’s game log.</p>
+      <div class="scroll"><table id="ptable"></table></div>
+      <p class="note" style="margin-top:.75rem">TS% is true shooting, which folds threes and free throws into one efficiency number; league average is usually around 57–58%. Saddiq Bey’s line comes from the league leaders table through eight games because he isn’t in the per-game feed.</p>
+    </section>
+    <section id="pdetail">
+      <div class="picker" id="picker" role="group" aria-label="Choose a player"></div>
+      <div class="pcard">
+        <div>
+          <h2 id="pname" style="margin-bottom:.25rem"></h2>
+          <div class="statline" id="pline"></div>
+          <p id="pblurb" style="color:var(--ink-2)"></p>
+        </div>
+        <div>
+          <h3>Points by game</h3>
+          <svg class="chart" id="pchart" role="img" aria-label="Points by game"></svg>
+        </div>
+      </div>
+      <div class="scroll" style="margin-top:1.5rem"><table id="plog"></table></div>
+    </section>
+  </div>
+</div>
+
+<!-- ===================== SCHEDULE ===================== -->
+<div class="view" id="v-schedule">
+  <div class="wrap">
+    <section>
+      <h2>Next 12 games</h2>
+      <p class="prose">Eight of these opponents currently have winning records. Sunday and Monday is a West Coast back-to-back, and Nov. 18–21 brings Detroit, Oklahoma City and San Antonio in four days.</p>
+      <div class="scroll" style="max-width:48rem"><table id="sched"></table></div>
+    </section>
+    <section>
+      <h2>Southwest Division</h2>
+      <div class="scroll" style="max-width:36rem"><table id="div"></table></div>
+    </section>
+    <section>
+      <h2>Expectations vs. reality</h2>
+      <div class="grid2">
+        <div class="insight"><div class="num">27.5</div><h3>Preseason win total</h3><p>Sportsbooks set the line after a 26–56 season with almost no roster turnover. Preseason power rankings had New Orleans 27th.</p></div>
+        <div class="insight"><div class="num">36</div><h3>Current win pace</h3><p>A .444 winning percentage over 82 games. The underlying net rating suggests a slightly better team than the record, given the 1–4 mark in close games.</p></div>
+      </div>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="wrap">
+  <div class="foot-brand"><b>The Pouch</b><span>Every number from the Pelicans’ 2026–27 season</span></div>
+  <dl class="foot-meta">
+    <div><dt>Updated</dt><dd>Through Nov. 6, 2026<br>Minnesota 115, New Orleans 109</dd></div>
+    <div><dt>Data</dt><dd>Box scores, standings and schedule from the league data feed. Ratings computed from those box scores.</dd></div>
+    <div><dt>Ranks and Bey’s line</dt><dd>iHeart/KFAN’s Nov. 6 Timberwolves–Pelicans preview</dd></div>
+    <div><dt>Context</dt><dd>NBA.com, ESPN, Yahoo Sports, Sports Illustrated, ClutchPoints, Sports Down South</dd></div>
+  </dl>
+</footer>
+
+<script>
+// ---------- data ----------
+const G = [
+ {d:"Oct 21",o:"IND",n:"Pacers",h:1,ot:0, t:{pts:120,poss:105,fgm:38,fga:89,tpm:10,tpa:30,ftm:34,fta:37,oreb:14,dreb:35,ast:23,stl:11,blk:6,tov:15,paint:48,fb:10,sc:27,pot:16,bench:43,rimM:20,rimA:39,midM:4,midA:9},
+  x:{pts:123,poss:106,fgm:47,fga:90,tpm:9,tpa:30,ftm:20,fta:29,oreb:9,dreb:34,ast:29,stl:9,blk:4,tov:13,paint:64,fb:27,sc:17,pot:16,bench:32,rimM:25,rimA:34}, q:[[31,35,26,28],[38,18,30,37]]},
+ {d:"Oct 23",o:"UTA",n:"Jazz",h:0,ot:0, t:{pts:119,poss:102,fgm:44,fga:87,tpm:8,tpa:26,ftm:23,fta:27,oreb:9,dreb:28,ast:18,stl:15,blk:5,tov:15,paint:64,fb:12,sc:14,pot:14,bench:58,rimM:18,rimA:24,midM:4,midA:13},
+  x:{pts:120,poss:103,fgm:41,fga:84,tpm:13,tpa:35,ftm:25,fta:33,oreb:14,dreb:28,ast:31,stl:4,blk:5,tov:18,paint:54,fb:7,sc:18,pot:27,bench:40,rimM:10,rimA:15}, q:[[28,24,38,29],[31,31,24,34]]},
+ {d:"Oct 24",o:"DEN",n:"Nuggets",h:0,ot:1, t:{pts:135,poss:116,fgm:50,fga:99,tpm:11,tpa:38,ftm:24,fta:30,oreb:14,dreb:36,ast:33,stl:9,blk:5,tov:18,paint:70,fb:23,sc:16,pot:17,bench:51,rimM:28,rimA:34,midM:4,midA:8},
+  x:{pts:141,poss:121,fgm:48,fga:99,tpm:15,tpa:47,ftm:30,fta:39,oreb:14,dreb:37,ast:26,stl:9,blk:6,tov:12,paint:56,fb:12,sc:24,pot:15,bench:40,rimM:22,rimA:27}},
+ {d:"Oct 28",o:"DEN",n:"Nuggets",h:1,ot:0, t:{pts:91,poss:102,fgm:34,fga:82,tpm:7,tpa:30,ftm:16,fta:22,oreb:8,dreb:33,ast:20,stl:14,blk:3,tov:19,paint:48,fb:19,sc:17,pot:24,bench:36,rimM:23,rimA:40,midM:3,midA:4},
+  x:{pts:104,poss:101,fgm:37,fga:80,tpm:12,tpa:31,ftm:18,fta:19,oreb:5,dreb:37,ast:30,stl:11,blk:5,tov:18,paint:42,fb:15,sc:4,pot:18,bench:19,rimM:16,rimA:26}, q:[[18,27,28,18],[37,20,22,25]]},
+ {d:"Oct 29",o:"SAC",n:"Kings",h:1,ot:0, t:{pts:132,poss:111,fgm:50,fga:85,tpm:10,tpa:29,ftm:22,fta:32,oreb:5,dreb:33,ast:32,stl:18,blk:6,tov:20,paint:80,fb:34,sc:7,pot:40,bench:41,rimM:30,rimA:36,midM:0,midA:4},
+  x:{pts:120,poss:114,fgm:46,fga:88,tpm:12,tpa:37,ftm:16,fta:20,oreb:7,dreb:33,ast:31,stl:11,blk:2,tov:25,paint:62,fb:29,sc:11,pot:29,bench:8,rimM:24,rimA:31}, q:[[24,39,39,30],[30,31,27,32]]},
+ {d:"Oct 31",o:"ATL",n:"Hawks",h:1,ot:0, t:{pts:121,poss:107,fgm:43,fga:76,tpm:7,tpa:17,ftm:28,fta:35,oreb:10,dreb:39,ast:27,stl:15,blk:4,tov:25,paint:66,fb:19,sc:23,pot:34,bench:52,rimM:24,rimA:39,midM:3,midA:5},
+  x:{pts:99,poss:105,fgm:35,fga:91,tpm:8,tpa:46,ftm:21,fta:23,oreb:14,dreb:22,ast:20,stl:11,blk:4,tov:19,paint:52,fb:18,sc:17,pot:32,bench:46,rimM:20,rimA:28}, q:[[35,28,29,29],[18,30,26,25]]},
+ {d:"Nov 2",o:"MEM",n:"Grizzlies",h:0,ot:1, t:{pts:135,poss:111,fgm:48,fga:101,tpm:14,tpa:37,ftm:25,fta:30,oreb:14,dreb:33,ast:27,stl:8,blk:3,tov:8,paint:62,fb:17,sc:22,pot:21,bench:46,rimM:25,rimA:37,midM:3,midA:8},
+  x:{pts:134,poss:109,fgm:47,fga:91,tpm:18,tpa:40,ftm:22,fta:27,oreb:11,dreb:38,ast:30,stl:5,blk:9,tov:16,paint:54,fb:20,sc:9,pot:7,bench:44,rimM:17,rimA:26}},
+ {d:"Nov 4",o:"UTA",n:"Jazz",h:1,ot:0, t:{pts:120,poss:109,fgm:38,fga:89,tpm:5,tpa:20,ftm:39,fta:43,oreb:13,dreb:35,ast:23,stl:9,blk:6,tov:19,paint:62,fb:16,sc:17,pot:19,bench:51,rimM:26,rimA:46,midM:2,midA:5},
+  x:{pts:113,poss:113,fgm:41,fga:94,tpm:11,tpa:47,ftm:20,fta:30,oreb:15,dreb:34,ast:24,stl:8,blk:7,tov:22,paint:48,fb:8,sc:20,pot:15,bench:29,rimM:17,rimA:26}},
+ {d:"Nov 6",o:"MIN",n:"Timberwolves",h:1,ot:0, t:{pts:109,poss:99,fgm:39,fga:86,tpm:10,tpa:24,ftm:21,fta:26,oreb:12,dreb:29,ast:25,stl:7,blk:4,tov:13,paint:54,fb:30,sc:9,pot:22,bench:37,rimM:24,rimA:43,midM:2,midA:7},
+  x:{pts:115,poss:97,fgm:38,fga:88,tpm:12,tpa:39,ftm:27,fta:37,oreb:17,dreb:32,ast:23,stl:5,blk:6,tov:14,paint:50,fb:10,sc:20,pot:14,bench:19,rimM:23,rimA:32}, q:[[30,21,28,30],[27,30,20,38]]}
+];
+const notes = [
+ "Mosley’s debut. Derik Queen posted a double-double in 18 minutes off the bench; Murray led with 23.",
+ "One-point road loss. 58 bench points, but Utah made 13 threes to New Orleans’ 8.",
+ "Lost in overtime in Denver as Jamal Murray scored 42. Trey Murphy III had 26 on 10-of-17 shooting.",
+ "Fell behind 37–18 after one quarter and never led. The only game the offense truly stalled.",
+ "First win. Fears posted 22 points, 8 rebounds and 13 assists; the Pelicans forced 25 turnovers and scored 80 in the paint.",
+ "Biggest win of the season. Atlanta went 8 of 46 from three; Saddiq Bey scored 25 off the bench.",
+ "Overtime road win. Zion 25 and 11, Queen 20, Murphy 18 despite Ty Jerome’s 40 for Memphis.",
+ "Won at the line, 39 of 43, despite going 5 of 20 from three. Zion 23, Murray 20, Queen 20 and 9.",
+ "Led 79–77 after three, lost the fourth 38–30. Fears scored 24; Minnesota had 17 offensive rebounds."
+];
+// player game rows: [pts,reb,ast,stl,fgm,fga,tpm,tpa,ftm,fta,pm] or null (did not play)
+const P = {
+ zion:{name:"Zion Williamson",pos:"F",g:[[22,3,3,3,7,16,2,4,6,6,1],[23,5,2,3,8,12,0,1,7,8,1],[17,1,2,2,7,11,0,1,3,5,-1],[25,5,2,3,10,14,1,1,4,6,-15],[22,6,2,5,10,12,0,0,2,4,5],[15,6,4,3,5,8,0,0,5,8,22],[25,11,4,0,9,15,0,0,7,9,3],[23,4,2,1,6,14,0,0,11,13,7],[13,8,4,2,5,10,0,0,3,4,-2]],
+  blurb:"The leading scorer and, crucially, available for all nine games. He’s finishing about 60% of his shots, nearly all of them in the paint, and his 2.4 steals a game are a surprise. Minnesota held him to 10 shots, his fewest of the season."},
+ fears:{name:"Jeremiah Fears",pos:"G",g:[[8,3,1,0,2,10,1,5,3,4,-12],[7,0,1,1,3,9,1,4,0,0,-11],[10,6,2,1,4,12,0,2,2,2,8],[11,4,3,1,5,14,1,5,0,0,-8],[22,8,13,2,9,16,3,5,1,3,3],[20,5,7,1,9,12,1,2,1,2,21],[12,4,7,0,5,17,0,6,2,2,-1],[19,6,2,2,6,16,1,4,6,6,-2],[24,5,5,2,9,16,0,1,6,7,-3]],
+  blurb:"The season’s clearest split. Fears averaged 9.0 points in the 0–4 start and 19.4 since, including a 22-8-13 line against Sacramento. The three-point shot (under 25%) is the next step."},
+ queen:{name:"Derik Queen",pos:"C",g:[[10,10,1,2,2,4,0,0,6,6,4],[12,7,2,2,4,9,1,2,3,4,2],[17,8,2,0,6,10,0,1,5,5,2],[11,12,1,0,3,6,0,0,5,7,-5],[9,2,3,1,4,7,1,2,0,0,8],[8,8,4,1,3,6,0,0,2,2,9],[20,7,5,2,7,13,1,2,5,6,-6],[20,9,6,0,8,21,0,2,4,4,2],[6,4,1,0,2,4,0,0,2,4,-2]],
+  blurb:"Leads the team in rebounding and has been a plus in six of nine games. Back-to-back 20-point nights came just before Minnesota, when he took only four shots."},
+ murphy:{name:"Trey Murphy III",pos:"F",tag:"Knees",g:[[11,4,1,0,4,11,2,5,1,1,-8],[9,6,3,1,4,9,1,4,0,0,1],[26,6,4,1,10,17,4,8,2,2,-17],[6,1,3,2,2,7,2,7,0,1,-12],[19,5,3,1,6,12,2,7,5,8,4],[15,5,5,1,4,10,1,3,6,6,24],[18,5,5,0,5,11,3,5,5,5,-4],null,[10,4,5,2,3,7,1,5,3,3,-1]],
+  blurb:"The team’s best three-point shooter by volume and accuracy, which makes his availability matter more than his scoring average suggests. He’s managing tendinopathy in both knees and missed the Nov. 4 game."},
+ murray:{name:"Dejounte Murray",pos:"G",g:[[23,3,7,2,9,18,2,5,3,3,-6],[16,6,6,3,7,15,0,2,2,2,0],[22,6,6,2,9,18,1,6,3,4,-16],[10,8,5,1,4,11,0,2,2,2,-12],null,null,null,[20,8,4,4,4,7,1,3,11,11,17],[7,2,4,1,3,11,1,2,0,0,-7]],
+  blurb:"Back from the Achilles rupture and running the offense at 5.3 assists a game. He missed Sacramento and Atlanta for the birth of his son, and Memphis. Friday was his toughest night: 3 of 11."},
+ herb:{name:"Herbert Jones",pos:"F",g:[[5,2,0,1,2,4,1,1,0,0,5],[3,1,0,0,1,2,1,2,0,0,-2],[2,3,1,1,1,3,0,2,0,0,7],[4,2,0,2,1,5,0,1,2,2,2],[16,4,1,2,7,12,0,3,2,3,27],[11,3,2,1,5,10,1,3,0,0,14],[9,4,3,1,3,8,3,7,0,0,9],[2,5,1,0,1,7,0,3,0,0,23],[0,4,0,0,0,3,0,1,0,0,-4]],
+  blurb:"The scoring is modest, but the Pelicans are +81 with him on the floor, by far the best mark on the team. He moved into the starting backcourt during Murray’s absence and helped win all three of those games."},
+ mathurin:{name:"Bennedict Mathurin",pos:"G-F",g:[[11,3,2,1,3,7,0,3,5,6,-5],[4,2,0,0,2,5,0,1,0,0,-3],[9,4,4,0,4,9,1,5,0,0,-5],[5,1,2,1,2,5,1,3,0,0,-1],[10,3,2,0,3,6,2,4,2,2,9],[7,1,2,0,2,5,1,3,2,2,-2],[4,0,0,1,2,4,0,0,0,0,5],[2,5,1,0,1,6,0,3,0,0,-10],[2,0,0,0,1,2,0,0,0,0,-7]],
+  blurb:"The marquee offseason signing has struggled to find a role, averaging 6 points on about 41% shooting. He’s scored in single digits in seven of nine games."}
+};
+const BEY = {name:"Saddiq Bey",gp:8,pts:16.4,reb:3.9,ast:1.9,stl:1.1,tpm:1.8};
+const RANKS = [["Points scored","121.6 per game",3,1],["Rebounding","44.9 per game",11,1],["Points allowed","119.3 per game",25,0],["Three-point accuracy","31.7%",26,0],["Threes made","9.0 per game",29,0]];
+const SCHED = [["Sun Nov 8","Clippers","Away","1–7","9:00 PM ET"],["Mon Nov 9","Warriors","Away","6–3","10:00 PM ET"],["Wed Nov 11","Nets","Home","2–6","8:00 PM ET"],["Fri Nov 13","Grizzlies","Home","6–3","8:00 PM ET"],["Sat Nov 14","Nuggets","Home","4–3","7:00 PM ET"],["Mon Nov 16","Warriors","Home","6–3","8:00 PM ET"],["Wed Nov 18","Pistons","Home","6–2","8:00 PM ET"],["Fri Nov 20","Thunder","Away","7–2","8:00 PM ET"],["Sat Nov 21","Spurs","Away","7–2","8:00 PM ET"],["Mon Nov 23","Suns","Home","2–5","8:00 PM ET"],["Fri Nov 27","Clippers","Away","1–7","9:30 PM ET"],["Sun Nov 29","Trail Blazers","Away","6–2","6:00 PM ET"]];
+const DIV = [["Houston Rockets",7,2,2],["San Antonio Spurs",7,2,4],["Memphis Grizzlies",6,3,7],["Dallas Mavericks",5,4,10],["New Orleans Pelicans",4,5,11]];
+
+// ---------- helpers ----------
+const $ = s => document.querySelector(s);
+const sum = (arr,f) => arr.reduce((a,b)=>a+f(b),0);
+const f1 = v => (Math.round(v*10)/10).toFixed(1);
+const pct = (m,a) => a ? (m/a*100).toFixed(1)+"%" : "—";
+const NS = "http://www.w3.org/2000/svg";
+const N = G.length;
+const T = k => sum(G,g=>g.t[k]||0), X = k => sum(G,g=>g.x[k]||0);
+const ortg = T("pts")/T("poss")*100, drtg = X("pts")/X("poss")*100;
+$("#s-net").textContent = (ortg-drtg>=0?"+":"−")+f1(Math.abs(ortg-drtg));
+$("#s-pace").textContent = f1(T("poss")/N);
+$("#i-rim").textContent = pct(X("rimM"),X("rimA"));
+
+// ---------- ribbon ----------
+(function(){
+  const s=$("#ribbon"), W=900, H=300, base=140, k=5, bw=W/N;
+  s.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  let h=`<line x1="0" y1="${base}" x2="${W}" y2="${base}" stroke="var(--ink)" stroke-width="2"/>`;
+  h+=`<line x1="${bw*4}" y1="10" x2="${bw*4}" y2="270" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4 5"/><text x="${bw*4+10}" y="${base+28}" style="font-family:var(--body);font-style:italic;font-size:13px" fill="var(--ink-2)">First win under Mosley</text>`;
+  G.forEach((g,i)=>{
+    const m=g.t.pts-g.x.pts, x=i*bw+bw*.15, w=bw*.7, hh=Math.max(Math.abs(m)*k,4), c=m>0?"var(--win)":"var(--loss)";
+    const y=m>0?base-hh:base;
+    h+=`<rect class="grow ${m>0?"":"down"}" style="animation-delay:${i*.05}s" x="${x}" y="${y}" width="${w}" height="${hh}" fill="${c}"/>`;
+    const ty=m>0?y-8:y+hh+18;
+    h+=`<text x="${x+w/2}" y="${ty}" text-anchor="middle" font-weight="700" font-size="15" fill="${c}">${m>0?"+":"−"}${Math.abs(m)}</text>`;
+    h+=`<text x="${x+w/2}" y="258" text-anchor="middle" font-size="13" fill="var(--muted)">${g.h?"":"@ "}${g.o}</text>`;
+    h+=`<text x="${x+w/2}" y="276" text-anchor="middle" font-size="12" fill="var(--muted)">${g.ot?"OT":g.d}</text>`;
+  });
+  s.innerHTML=h;
+})();
+
+// ---------- comparison builder ----------
+function cmpRows(a,b,rows){
+  return rows.map(([lab,av,bv,disp])=>{
+    const tot=(av+bv)||1, pa=av/tot*100;
+    return `<div class="cmp-row"><div class="lab">${lab}</div><div class="a">${disp?disp(av,"t"):av}</div><div class="twin"><span class="x" style="width:${pa}%"></span><span class="y" style="width:${100-pa}%"></span></div><div class="b">${disp?disp(bv,"x"):bv}</div></div>`;
+  }).join("");
+}
+function gameRows(g){
+  const t=g.t,x=g.x;
+  return [["Field goals",t.fgm,x.fgm,(v,s)=>`${v}/${g[s].fga}`],["Threes",t.tpm,x.tpm,(v,s)=>`${v}/${g[s].tpa}`],["Free throws",t.ftm,x.ftm,(v,s)=>`${v}/${g[s].fta}`],
+   ["Offensive rebounds",t.oreb,x.oreb],["Assists",t.ast,x.ast],["Steals",t.stl,x.stl],["Turnovers",t.tov,x.tov],["Points in paint",t.paint,x.paint],["Fast-break points",t.fb,x.fb],["Second-chance points",t.sc,x.sc],["Bench points",t.bench,x.bench],["At the rim",t.rimM,x.rimM,(v,s)=>`${v}/${g[s].rimA}`]];
+}
+$("#recapCmp").innerHTML = `<div class="cmp-row" style="font-weight:700"><div class="a">NOP</div><div></div><div class="b">MIN</div></div>` + cmpRows(G[8].t,G[8].x,gameRows(G[8]).filter((r,i)=>[1,2,3,6,8,9,11].includes(i)));
+
+// ---------- ranks ----------
+$("#ranks").innerHTML = RANKS.map(([w,s,r,good])=>`<div class="rank-row"><div class="what">${w}<span>${s}</span></div><div class="track"><div class="dot ${good?"good":"bad"}" style="left:calc(${(r-1)/29*100}%)">${r}</div></div></div>`).join("") +
+  `<div class="rank-row" aria-hidden="true"><div></div><div style="display:flex;justify-content:space-between;font-family:var(--display);font-size:.8rem;color:var(--muted)"><span>1st</span><span>30th</span></div></div>`;
+
+// ---------- game log ----------
+(function(){
+  const tb=$("#gamelog"); let w=0,l=0;
+  let h=`<thead><tr><th>Date</th><th>Opponent</th><th>Result</th><th class="n">Score</th><th class="n">Record</th><th class="n">Off. rtg</th><th class="n">Def. rtg</th><th class="n">3PM</th><th class="n">FTA</th><th class="n">TOV</th><th>Top Pelican</th></tr></thead><tbody>`;
+  G.forEach((g,i)=>{
+    const win=g.t.pts>g.x.pts; win?w++:l++;
+    let best=null; for(const k in P){const r=P[k].g[i]; if(r&&(!best||r[0]>best.r[0])) best={k,r};}
+    h+=`<tr class="click" data-i="${i}" tabindex="0" aria-expanded="false"><td>${g.d}</td><td>${g.h?"":"@ "}${g.n}${g.ot?' <span class="pill">OT</span>':""}</td><td class="res ${win?"w":"l"}">${win?"W":"L"}</td><td class="n">${g.t.pts}–${g.x.pts}</td><td class="n">${w}–${l}</td><td class="n">${f1(g.t.pts/g.t.poss*100)}</td><td class="n">${f1(g.x.pts/g.x.poss*100)}</td><td class="n">${g.t.tpm}–${g.x.tpm}</td><td class="n">${g.t.fta}–${g.x.fta}</td><td class="n">${g.t.tov}</td><td>${P[best.k].name.split(" ").slice(-1)[0]} ${best.r[0]}</td></tr>`;
+  });
+  tb.innerHTML=h+"</tbody>";
+  function toggle(tr){
+    const i=+tr.dataset.i, open=tr.nextElementSibling&&tr.nextElementSibling.classList.contains("detail");
+    tb.querySelectorAll("tr.detail").forEach(r=>r.remove()); tb.querySelectorAll("tr.sel").forEach(r=>{r.classList.remove("sel");r.setAttribute("aria-expanded","false")});
+    if(open) return;
+    const g=G[i]; tr.classList.add("sel"); tr.setAttribute("aria-expanded","true");
+    const perf=Object.values(P).map(p=>({p,r:p.g[i]})).filter(o=>o.r).sort((a,b)=>b.r[0]-a.r[0]).slice(0,4)
+      .map(o=>`<b>${o.p.name}</b> ${o.r[0]} pts, ${o.r[1]} reb, ${o.r[2]} ast (${o.r[4]}-${o.r[5]} FG)`).join(" · ");
+    const d=document.createElement("tr"); d.className="detail";
+    d.innerHTML=`<td colspan="11"><p style="margin:0 0 1rem;font-family:var(--body)">${notes[i]}</p><div class="cmp-row" style="font-weight:700;max-width:260px"><div class="a">NOP</div><div></div><div class="b">${g.o}</div></div><div class="cmp">${cmpRows(g.t,g.x,gameRows(g))}</div><div class="performers">${perf}</div></td>`;
+    tr.after(d);
+  }
+  tb.addEventListener("click",e=>{const tr=e.target.closest("tr.click"); if(tr) toggle(tr);});
+  tb.addEventListener("keydown",e=>{const tr=e.target.closest("tr.click"); if(tr&&(e.key==="Enter"||e.key===" ")){e.preventDefault();toggle(tr);}});
+})();
+
+// ---------- line chart ----------
+(function(){
+  const s=$("#effChart"), W=900,H=300,L=44,R=16,Tp=16,B=40, lo=85, hi=125;
+  s.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const xs=i=>L+i*(W-L-R)/(N-1), ys=v=>Tp+(hi-v)/(hi-lo)*(H-Tp-B);
+  let h="";
+  [90,100,110,120].forEach(v=>h+=`<line x1="${L}" x2="${W-R}" y1="${ys(v)}" y2="${ys(v)}" stroke="var(--rule)"/><text x="${L-8}" y="${ys(v)+4}" text-anchor="end" font-size="12" fill="var(--muted)">${v}</text>`);
+  const o=G.map(g=>g.t.pts/g.t.poss*100), d=G.map(g=>g.x.pts/g.x.poss*100);
+  const path=a=>a.map((v,i)=>`${i?"L":"M"}${xs(i)},${ys(v)}`).join("");
+  h+=`<path d="${path(d)}" fill="none" stroke="var(--loss)" stroke-width="2.5"/><path d="${path(o)}" fill="none" stroke="var(--gold)" stroke-width="3"/>`;
+  G.forEach((g,i)=>{h+=`<circle cx="${xs(i)}" cy="${ys(d[i])}" r="4" fill="var(--loss)"/><circle cx="${xs(i)}" cy="${ys(o[i])}" r="4.5" fill="var(--gold)"/><text x="${xs(i)}" y="${H-14}" text-anchor="middle" font-size="12" fill="var(--muted)">${g.h?"":"@"}${g.o}</text>`;});
+  s.innerHTML=h;
+})();
+
+// ---------- grouped bars (threes) ----------
+(function(){
+  const s=$("#threeChart"), W=900,H=240,L=30,B=36,Tp=14, mx=20;
+  s.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const bw=(W-L)/N, ys=v=>Tp+(mx-v)/mx*(H-Tp-B);
+  let h="";
+  [5,10,15,20].forEach(v=>h+=`<line x1="${L}" x2="${W}" y1="${ys(v)}" y2="${ys(v)}" stroke="var(--rule)"/><text x="${L-6}" y="${ys(v)+4}" text-anchor="end" font-size="12" fill="var(--muted)">${v}</text>`);
+  G.forEach((g,i)=>{
+    const x=L+i*bw+bw*.18, w=bw*.3;
+    h+=`<rect class="grow" x="${x}" y="${ys(g.t.tpm)}" width="${w}" height="${ys(0)-ys(g.t.tpm)}" fill="var(--win)"/><rect class="grow" x="${x+w+3}" y="${ys(g.x.tpm)}" width="${w}" height="${ys(0)-ys(g.x.tpm)}" fill="var(--loss)" opacity=".75"/>`;
+    h+=`<text x="${x+w/2}" y="${ys(g.t.tpm)-5}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">${g.t.tpm}</text><text x="${x+w*1.5+3}" y="${ys(g.x.tpm)-5}" text-anchor="middle" font-size="12" fill="var(--ink-2)">${g.x.tpm}</text>`;
+    h+=`<text x="${x+w+1.5}" y="${H-12}" text-anchor="middle" font-size="12" fill="var(--muted)">${g.h?"":"@"}${g.o}</text>`;
+  });
+  s.innerHTML=h;
+})();
+
+// ---------- team table ----------
+(function(){
+  const pg=v=>f1(v/N);
+  const rows=[["Points",pg(T("pts")),pg(X("pts"))],["Possessions",pg(T("poss")),pg(X("poss"))],["Points per 100 possessions",f1(ortg),f1(drtg)],
+   ["Field goals",`${pg(T("fgm"))}–${pg(T("fga"))}`,`${pg(X("fgm"))}–${pg(X("fga"))}`],["Field goal %",pct(T("fgm"),T("fga")),pct(X("fgm"),X("fga"))],
+   ["Threes",`${pg(T("tpm"))}–${pg(T("tpa"))}`,`${pg(X("tpm"))}–${pg(X("tpa"))}`],["Three-point %",pct(T("tpm"),T("tpa")),pct(X("tpm"),X("tpa"))],
+   ["Free throws",`${pg(T("ftm"))}–${pg(T("fta"))}`,`${pg(X("ftm"))}–${pg(X("fta"))}`],["Free throw %",pct(T("ftm"),T("fta")),pct(X("ftm"),X("fta"))],
+   ["True shooting %",(T("pts")/(2*(T("fga")+.44*T("fta")))*100).toFixed(1)+"%",(X("pts")/(2*(X("fga")+.44*X("fta")))*100).toFixed(1)+"%"],
+   ["Offensive rebounds",pg(T("oreb")),pg(X("oreb"))],["Defensive rebounds",pg(T("dreb")),pg(X("dreb"))],["Assists",pg(T("ast")),pg(X("ast"))],
+   ["Steals",pg(T("stl")),pg(X("stl"))],["Blocks",pg(T("blk")),pg(X("blk"))],["Turnovers",pg(T("tov")),pg(X("tov"))]];
+  $("#teamTable").innerHTML=`<thead><tr><th>Per game</th><th class="n">Pelicans</th><th class="n">Opponents</th></tr></thead><tbody>`+rows.map(r=>`<tr><td>${r[0]}</td><td class="n"><b>${r[1]}</b></td><td class="n">${r[2]}</td></tr>`).join("")+"</tbody>";
+  $("#teamTable").parentElement.style.maxWidth="40rem";
+})();
+
+// ---------- pair bars ----------
+function pairBars(el,rows,max){
+  $(el).innerHTML=rows.map(([l,sm,a,b,fmt])=>{
+    const F=fmt||(v=>v); return `<div class="hbar"><div class="l">${l}<small>${sm}</small></div><div class="pair"><div class="us"><span class="b" style="width:${a/max*100}%"></span>${F(a)}</div><div class="them"><span class="b" style="width:${b/max*100}%"></span>${F(b)}</div></div></div>`;}).join("")+
+    `<div class="legend"><span><i style="background:var(--win)"></i>Pelicans</span><span><i style="background:var(--loss);opacity:.75"></i>Opponents</span></div>`;
+}
+(function(){
+  const efg=(s)=>( (s==="t"?T("fgm")+.5*T("tpm"):X("fgm")+.5*X("tpm")) / (s==="t"?T("fga"):X("fga")) *100);
+  const tovp=s=>(s==="t"?T("tov")/T("poss"):X("tov")/X("poss"))*100;
+  const orp=s=>(s==="t"?T("oreb")/(T("oreb")+X("dreb")):X("oreb")/(X("oreb")+T("dreb")))*100;
+  const ftr=s=>(s==="t"?T("fta")/T("fga"):X("fta")/X("fga"))*100;
+  const p=v=>v.toFixed(1)+"%";
+  pairBars("#factors",[["Effective FG%","higher is better",efg("t"),efg("x"),p],["Turnover rate","per 100 possessions, lower is better",tovp("t"),tovp("x"),p],["Offensive rebound %","share of own misses grabbed",orp("t"),orp("x"),p],["Free-throw rate","FTA per FGA",ftr("t"),ftr("x"),p]],60);
+  const pg=v=>v/N, q=v=>f1(v);
+  pairBars("#sources",[["Points in the paint","per game",pg(T("paint")),pg(X("paint")),q],["Fast-break points","per game",pg(T("fb")),pg(X("fb")),q],["Points off turnovers","per game",pg(T("pot")),pg(X("pot")),q],["Second-chance points","per game",pg(T("sc")),pg(X("sc")),q],["Bench points","per game",pg(T("bench")),pg(X("bench")),q],["Points from threes","per game",pg(T("tpm")*3),pg(X("tpm")*3),q],["Points from free throws","per game",pg(T("ftm")),pg(X("ftm")),q]],70);
+})();
+
+// ---------- shot profile ----------
+(function(){
+  const fga=T("fga"), rim=T("rimA"), mid=T("midA"), three=T("tpa"), short=fga-rim-mid-three;
+  const rimM=T("rimM"), midM=T("midM"), thM=T("tpm"), shM=T("fgm")-rimM-midM-thM;
+  const zones=[["At the rim",rim,rimM,"s1"],["Short paint",short,shM,"s2"],["Midrange",mid,midM,"s3"],["Three",three,thM,"s4"]];
+  let h=`<div class="stack" role="img" aria-label="Share of shot attempts by zone">`+zones.map(z=>`<span class="${z[3]}" style="width:${z[1]/fga*100}%">${(z[1]/fga*100).toFixed(0)}%</span>`).join("")+`</div>`;
+  h+=`<table style="margin-top:1.25rem"><thead><tr><th>Zone</th><th class="n">Attempts / game</th><th class="n">Share</th><th class="n">FG%</th><th class="n">Points per shot</th></tr></thead><tbody>`+
+   zones.map(z=>`<tr><td><i class="${z[3]}" style="display:inline-block;width:.75rem;height:.75rem;border-radius:2px;margin-right:.45rem;vertical-align:-1px"></i>${z[0]}</td><td class="n">${f1(z[1]/N)}</td><td class="n">${(z[1]/fga*100).toFixed(1)}%</td><td class="n">${pct(z[2],z[1])}</td><td class="n">${(z[2]*(z[0]==="Three"?3:2)/z[1]).toFixed(2)}</td></tr>`).join("")+`</tbody></table>`;
+  h+=`<p style="margin-top:1.25rem">At the rim, New Orleans converts ${pct(rimM,rim)}. Opponents convert ${pct(X("rimM"),X("rimA"))} there, and they take ${(X("tpa")/X("fga")*100).toFixed(0)}% of their shots from three compared with the Pelicans’ ${(three/fga*100).toFixed(0)}%.</p>`;
+  $("#shotProfile").innerHTML=h;
+})();
+
+// ---------- quarters & splits ----------
+(function(){
+  const reg=G.filter(g=>g.q), Q=[0,1,2,3].map(i=>[sum(reg,g=>g.q[0][i]),sum(reg,g=>g.q[1][i])]);
+  $("#quarters").innerHTML=`<thead><tr><th>Quarter</th><th class="n">Pelicans</th><th class="n">Opponents</th><th class="n">Margin</th><th class="n">Per game</th></tr></thead><tbody>`+
+   Q.map((q,i)=>{const m=q[0]-q[1];return `<tr><td>${["First","Second","Third","Fourth"][i]}</td><td class="n">${q[0]}</td><td class="n">${q[1]}</td><td class="n res ${m>=0?"w":"l"}">${m>=0?"+":"−"}${Math.abs(m)}</td><td class="n">${m>=0?"+":"−"}${f1(Math.abs(m)/reg.length)}</td></tr>`;}).join("")+"</tbody>";
+  const rec=f=>{const gs=G.filter(f), w=gs.filter(g=>g.t.pts>g.x.pts).length; const df=sum(gs,g=>g.t.pts-g.x.pts); return [`${w}–${gs.length-w}`, (df>=0?"+":"−")+f1(Math.abs(df)/gs.length)];};
+  const S=[["Home",g=>g.h],["Away",g=>!g.h],["Decided by 6 or fewer",g=>Math.abs(g.t.pts-g.x.pts)<=6],["Decided by 7 or more",g=>Math.abs(g.t.pts-g.x.pts)>=7],["Made more threes than opponent",g=>g.t.tpm>g.x.tpm],["Took 30+ free throws",g=>g.t.fta>=30],["With Murray",(g,i)=>P.murray.g[G.indexOf(g)]],["Without Murray",(g)=>!P.murray.g[G.indexOf(g)]]];
+  $("#splits").innerHTML=`<thead><tr><th>Situation</th><th class="n">Record</th><th class="n">Avg. margin</th></tr></thead><tbody>`+S.map(([l,f])=>{const r=rec(f);return `<tr><td>${l}</td><td class="n"><b>${r[0]}</b></td><td class="n">${r[1]}</td></tr>`;}).join("")+"</tbody>";
+})();
+
+// ---------- players ----------
+const PK=Object.keys(P);
+function avg(p){
+  const gs=p.g.filter(Boolean), n=gs.length, s=i=>sum(gs,r=>r[i]);
+  const fga=s(5), fta=s(9), pts=s(0);
+  return {gp:n,pts:pts/n,reb:s(1)/n,ast:s(2)/n,stl:s(3)/n,fgp:s(4)/fga*100,tpm:s(6)/n,tpa:s(7)/n,tpp:s(7)?s(6)/s(7)*100:0,ftp:fta?s(8)/fta*100:0,ts:pts/(2*(fga+.44*fta))*100,pm:s(10)};
+}
+const PA=PK.map(k=>({k,...avg(P[k]),name:P[k].name}));
+let sortKey="pts", sortDir=-1;
+const cols=[["name","Player",0],["gp","GP",1],["pts","PTS",1],["reb","REB",1],["ast","AST",1],["stl","STL",1],["fgp","FG%",1],["tpm","3PM",1],["tpp","3P%",1],["ftp","FT%",1],["ts","TS%",1],["pm","+/−",1]];
+function fmtCell(k,v){ if(k==="name"||k==="gp") return v; if(["fgp","tpp","ftp","ts"].includes(k)) return v.toFixed(1); if(k==="pm") return (v>0?"+":v<0?"−":"")+Math.abs(v); return f1(v); }
+function renderPT(){
+  const rows=[...PA].sort((a,b)=>{const A=a[sortKey],B=b[sortKey]; return (typeof A==="string"?A.localeCompare(B):A-B)*sortDir;});
+  let h=`<thead><tr>`+cols.map(([k,l,num])=>`<th class="sortable ${num?"n":""}" data-k="${k}" tabindex="0" ${k===sortKey?`aria-sort="${sortDir<0?"descending":"ascending"}"`:""}>${l}</th>`).join("")+`</tr></thead><tbody>`;
+  h+=rows.map(r=>`<tr class="click" data-k="${r.k}" tabindex="0">`+cols.map(([k,,num])=>`<td class="${num?"n":""}">${k==="name"?`<b>${r.name}</b>`:fmtCell(k,r[k])}</td>`).join("")+`</tr>`).join("");
+  h+=`<tr><td><b>${BEY.name}</b></td><td class="n">${BEY.gp}</td><td class="n">${f1(BEY.pts)}</td><td class="n">${f1(BEY.reb)}</td><td class="n">${f1(BEY.ast)}</td><td class="n">${f1(BEY.stl)}</td><td class="n">—</td><td class="n">${f1(BEY.tpm)}</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>`;
+  $("#ptable").innerHTML=h+"</tbody>";
+}
+$("#ptable").addEventListener("click",e=>{
+  const th=e.target.closest("th.sortable"); if(th){const k=th.dataset.k; if(k===sortKey) sortDir*=-1; else {sortKey=k; sortDir=k==="name"?1:-1;} renderPT(); return;}
+  const tr=e.target.closest("tr.click"); if(tr){showPlayer(tr.dataset.k); $("#pdetail").scrollIntoView({behavior:"smooth"});}
+});
+$("#ptable").addEventListener("keydown",e=>{if(e.key!=="Enter")return; const el=e.target; if(el.matches("th.sortable")||el.matches("tr.click")) el.click();});
+renderPT();
+$("#picker").innerHTML=PK.map(k=>`<button type="button" data-k="${k}" aria-pressed="false">${P[k].name}</button>`).join("");
+$("#picker").addEventListener("click",e=>{const b=e.target.closest("button"); if(b) showPlayer(b.dataset.k);});
+function showPlayer(k){
+  const p=P[k], a=avg(p);
+  document.querySelectorAll("#picker button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k?"true":"false"));
+  $("#pname").innerHTML=p.name+(p.tag?`<span class="tag">${p.tag}</span>`:"");
+  $("#pline").innerHTML=[["PTS",f1(a.pts)],["REB",f1(a.reb)],["AST",f1(a.ast)],["STL",f1(a.stl)],["FG%",a.fgp.toFixed(1)],["TS%",a.ts.toFixed(1)],["GP",a.gp]].map(([l,v])=>`<span><b>${v}</b><i>${l}</i></span>`).join("");
+  $("#pblurb").textContent=p.blurb;
+  const s=$("#pchart"), W=600,H=220,B=34,Tp=18, mx=30, bw=W/N, ys=v=>Tp+(mx-v)/mx*(H-Tp-B);
+  s.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  let h=`<line x1="0" x2="${W}" y1="${ys(a.pts)}" y2="${ys(a.pts)}" stroke="var(--gold)" stroke-dasharray="4 4"/><text x="${W}" y="${ys(a.pts)-6}" text-anchor="end" font-size="11" fill="var(--gold)">avg ${f1(a.pts)}</text>`;
+  p.g.forEach((r,i)=>{const x=i*bw+bw*.2,w=bw*.6, g=G[i], win=g.t.pts>g.x.pts;
+    if(r){h+=`<rect class="grow" x="${x}" y="${ys(r[0])}" width="${w}" height="${ys(0)-ys(r[0])}" fill="${win?"var(--win)":"var(--loss)"}" opacity="${win?1:.8}"/><text x="${x+w/2}" y="${ys(r[0])-5}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">${r[0]}</text>`;}
+    else h+=`<text x="${x+w/2}" y="${ys(0)-6}" text-anchor="middle" font-size="11" fill="var(--muted)">DNP</text>`;
+    h+=`<text x="${x+w/2}" y="${H-10}" text-anchor="middle" font-size="11" fill="var(--muted)">${g.o}</text>`;});
+  s.innerHTML=h;
+  $("#plog").innerHTML=`<thead><tr><th>Date</th><th>Opp</th><th>Result</th><th class="n">PTS</th><th class="n">REB</th><th class="n">AST</th><th class="n">STL</th><th class="n">FG</th><th class="n">3P</th><th class="n">FT</th><th class="n">+/−</th></tr></thead><tbody>`+
+   p.g.map((r,i)=>{const g=G[i],win=g.t.pts>g.x.pts; const head=`<td>${g.d}</td><td>${g.h?"":"@ "}${g.o}</td><td class="res ${win?"w":"l"}">${win?"W":"L"} ${g.t.pts}–${g.x.pts}</td>`;
+     return r?`<tr>${head}<td class="n"><b>${r[0]}</b></td><td class="n">${r[1]}</td><td class="n">${r[2]}</td><td class="n">${r[3]}</td><td class="n">${r[4]}-${r[5]}</td><td class="n">${r[6]}-${r[7]}</td><td class="n">${r[8]}-${r[9]}</td><td class="n">${r[10]>0?"+":r[10]<0?"−":""}${Math.abs(r[10])}</td></tr>`:`<tr>${head}<td colspan="8" class="note">Did not play</td></tr>`;}).join("")+"</tbody>";
+}
+showPlayer("fears");
+
+// ---------- schedule ----------
+$("#sched").innerHTML=`<thead><tr><th>Date</th><th>Opponent</th><th>Where</th><th>Tip</th><th class="n">Opp. record</th></tr></thead><tbody>`+
+  SCHED.map((r,i)=>{const [w,l]=r[3].split("–").map(Number);return `<tr${i===0?' style="background:var(--gold-soft)"':""}><td>${r[0]}${i===0?'<span class="pill">Next</span>':""}</td><td><b>${r[1]}</b></td><td>${r[2]}</td><td>${r[4]}</td><td class="n ${w>l?"res l":""}">${r[3]}</td></tr>`;}).join("")+"</tbody>";
+$("#div").innerHTML=`<thead><tr><th>Team</th><th class="n">W</th><th class="n">L</th><th class="n">GB</th><th class="n">West seed</th></tr></thead><tbody>`+
+  DIV.map(r=>{const gb=((DIV[0][1]-r[1])+(r[2]-DIV[0][2]))/2; return `<tr${r[0].includes("Pelicans")?' style="background:var(--gold-soft)"':""}><td><b>${r[0]}</b></td><td class="n">${r[1]}</td><td class="n">${r[2]}</td><td class="n">${gb?gb.toFixed(1):"—"}</td><td class="n">${r[3]}</td></tr>`;}).join("")+"</tbody>";
+
+// ---------- routing ----------
+const VIEWS=["overview","games","team","players","schedule"];
+function route(){
+  const v=VIEWS.includes(location.hash.slice(1))?location.hash.slice(1):"overview";
+  VIEWS.forEach(n=>document.getElementById("v-"+n).classList.toggle("on",n===v));
+  document.querySelectorAll("nav a").forEach(a=>{ if(a.getAttribute("href")==="#"+v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route); route();
+</script>
+</body>
+</html>
